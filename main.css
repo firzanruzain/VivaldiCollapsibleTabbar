@@ -1,12 +1,12 @@
-
 /********** webview-container styling **********/
 
 /* add margin for maximized browser */
 #browser.maximized #webview-container {
-  margin-top: 7px;
-  margin-right: 7px;
-  margin-bottom: 7px;
-  margin-left: 7px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border-radius: var(--radius);
 }
 
 /* add border radius for maximized browser */
@@ -15,28 +15,55 @@
 }
 
 /* add left margin for left vertical tabbar (skip when toolbar-edit-mode active) */
-#browser.tabs-left:not(.toolbar-edit-mode) #webview-container { margin-left: 52px; }
+#browser.tabs-left:not(.toolbar-edit-mode) #webview-container {
+  margin-left: 52px;
+}
 
 /********** tabbar styling **********/
 
-#browser.tabs-left:not(.toolbar-edit-mode) #tabs-tabbar-container.left:hover, #tabs-tabbar-container.left:has(div.marked) {
-    background-color: #00000085 !important;
-}
+/* #browser.tabs-left:not(.toolbar-edit-mode) #tabs-tabbar-container.left:hover,
+#tabs-tabbar-container.left:has(div.marked) {
+  background-color: #00000085 !important;
+} */
 
-#browser.tabs-left:not(.toolbar-edit-mode) #tabs-tabbar-container.left:not(:hover):not(:has(div.marked)) {
+#browser.tabs-left:not(.toolbar-edit-mode)
+  .tabbar-wrapper:not(:hover)
+  #tabs-tabbar-container.left:not(:has(div.marked)):not(
+    :has(.UrlBar-AddressField:focus-within)
+  ):not(:has(.ToolbarButton-Button.button-pressed)) {
   width: 42px !important;
 }
 
 #browser.tabs-left:not(.toolbar-edit-mode) #tabs-tabbar-container.left {
-  transition: width 0.1s cubic-bezier(0, 0, 0.16, 0.99), background-color 0.1s ease-out;
+  transition: width 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
 }
 
 #browser.tabs-left:not(.toolbar-edit-mode) .tabbar-wrapper {
-  top: 6px;
-  height: calc(100% - (6px * 2));
+  top: 5px;
+  height: calc(100% - (5px * 2));
   flex-direction: row;
   position: fixed;
   z-index: 5;
 }
 
+.tabbar-wrapper {
+  color: var(--colorFg);
+  border-radius: 0px var(--currentRadius) var(--currentRadius) 0px;
+}
 
+#tabs-tabbar-container {
+  border-radius: 0px var(--currentRadius) var(--currentRadius) 0px;
+}
+
+div#tabs-tabbar-container::before {
+  border-radius: 0px var(--currentRadius) var(--currentRadius) 0px;
+  content: "";
+  background-image: var(--browserBlurredImage);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.6);
+}
