@@ -8,59 +8,109 @@
 
   &.tabs-left:has(.auto-hide-wrapper.left.has-tabbar) {
     #main, #footer{
-      padding-left: calc(52px + var(--extraPadding, 0px));
+      padding-left: calc(42px + var(--extraPadding, 0px));
     }
   }
 
   /* add right margin for right vertical tabbar (skip when toolbar-edit-mode active) */
   &.tabs-right:has(.auto-hide-wrapper.right.has-tabbar) {
     #main, #footer {
-      padding-right: calc(52px + var(--extraPadding, 0px));
+      padding-right: calc(42px + var(--extraPadding, 0px));
     }
   }
 
-  .auto-hide-wrapper.left.has-tabbar {
+  .auto-hide-wrapper.left.has-tabbar, .auto-hide-wrapper.right.has-tabbar {
+    
+    &.left {
+      left: 0 !important;
+    }
+
+    &.right {
+      right: 0 !important;
+    }
+
+    top: 0px;
+    height: calc(100% - (0px * 2));
     transform: unset !important;
-    left: 0px !important;
-    border-radius: 0px var(--radiusWindow) var(--radiusWindow) 0px;
     z-index: 4;
+    border-radius: 0px 0px 0px 0px !important;
+    box-shadow: unset !important;
 
     .tabbar-wrapper {
-      border-radius: 0px var(--radiusWindow) var(--radiusWindow) 0px !important;
+      border-radius: 0px 0px 0px 0px;
+      transition: box-shadow 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
     }
 
     .tabbar-wrapper:not(:hover) #tabs-tabbar-container:not(:focus-within) {
       width: 42px !important;
     }
 
-    #tabs-tabbar-container {
-      transition: width 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
-    }
-  }
-
-  .auto-hide-wrapper.right.has-tabbar {
-    transform: unset !important;
-    right: 0px !important;
-    border-radius: var(--radiusWindow) 0px 0px var(--radiusWindow);
-    z-index: 4;
-
-    .tabbar-wrapper {
-       border-radius: var(--radiusWindow) 0px 0px var(--radiusWindow);
-    }
-
-    .tabbar-wrapper:not(:hover) #tabs-tabbar-container:not(:focus-within) {
-      width: 42px !important;
+    .tabbar-wrapper:hover {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.3);
     }
 
     #tabs-tabbar-container {
       transition: width 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
+      border-radius: 0px 0px 0px 0px;
+    }
+
+    &:has(#panels-container.expanded) {
+      .tabbar-wrapper {
+        display: none;
+      }
     }
   }
 
   &.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar {
-      background-image: var(--browserBlurredImage);
-      background-size: cover;
+
+    background-color: transparent;
+    
+    &.left .tabbar-wrapper, &.left::before {
+      border-radius: 0px var(--radiusWindow) var(--radiusWindow) 0px;
     }
+
+    &.right .tabbar-wrapper, &.right::before {
+      border-radius: var(--radiusWindow) 0px 0px var(--radiusWindow);
+    }
+
+    &::before  {
+      width: 100%;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      contain: paint;
+      background-attachment: fixed;
+      background-color: var(--browserBackgroundColor);
+      background-image: var(--browserBlurredImage);
+      background-position: var(--browserBackgroundPosition);
+      background-repeat: var(--browserBackgroundRepeat);
+      background-size: var(--browserBackgroundSize);
+    }
+
+    div#panels-container::before  {
+      width: 100%;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      contain: paint;
+      background-attachment: fixed;
+      background-color: var(--browserBackgroundColor);
+      background-image: var(--browserBlurredImage);
+      background-position: var(--browserBackgroundPosition);
+      background-repeat: var(--browserBackgroundRepeat);
+      background-size: var(--browserBackgroundSize);
+    }
+
+    #panels-container {
+    padding-bottom: 0px !important;
+  }
+  }
 }
 
 .auto-hide {
