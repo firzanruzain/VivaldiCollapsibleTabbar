@@ -1,6 +1,17 @@
 
 /* add left margin for left vertical tabbar (skip when toolbar-edit-mode active) */
 #browser.maximized {
+
+  --animation: 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
+  --widthTabbar: 42px;
+
+  .separator{
+    --PositionX: -6px !important;
+  }
+
+  &:has(#tabs-subcontainer) {
+    --widthTabbar: 84px;
+  }
   
   &.tabs-left:has(.auto-hide-wrapper.left.has-tabbar #panels-container) {
     --extraPadding: 41px;
@@ -8,15 +19,19 @@
 
   &.tabs-left:has(.auto-hide-wrapper.left.has-tabbar) {
     #main, #footer{
-      padding-left: calc(47px + var(--extraPadding, 0px));
+      padding-left: calc(calc(var(--widthTabbar) + 5px) + var(--extraPadding, 0px));
     }
   }
 
   /* add right margin for right vertical tabbar (skip when toolbar-edit-mode active) */
   &.tabs-right:has(.auto-hide-wrapper.right.has-tabbar) {
     #main, #footer {
-      padding-right: calc(47px + var(--extraPadding, 0px));
+      padding-right: calc(calc(var(--widthTabbar) + 5px) + var(--extraPadding, 0px));
     }
+  }
+
+  #main, #footer {
+    transition: padding var(--animation);
   }
 
   .auto-hide-wrapper.left.has-tabbar, .auto-hide-wrapper.right.has-tabbar {
@@ -35,14 +50,14 @@
     z-index: 4;
     border-radius: 0px 0px 0px 0px;
     box-shadow: 0 0 0 0px transparent, 0 0 0px transparent;
-    transition: box-shadow 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
+    transition: box-shadow var(--animation);
 
     .tabbar-wrapper {
       border-radius: 0px 0px 0px 0px;
     }
 
     &:not(.show) #tabs-tabbar-container:not(:focus-within) {
-      width: 42px !important;
+      width: var(--widthTabbar) !important;
     }
 
     &.show {
@@ -50,7 +65,7 @@
     }
 
     #tabs-tabbar-container {
-      transition: width 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
+      transition: width var(--animation);
       border-radius: 0px 0px 0px 0px;
       padding-top: 6px;
       padding-left: 2.5px;
@@ -91,7 +106,7 @@
       background-position: var(--browserBackgroundPosition);
       background-repeat: var(--browserBackgroundRepeat);
       background-size: var(--browserBackgroundSize);
-      transition: background-color 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
+      transition: background-color var(--animation);
       background-blend-mode: multiply;
     }
 
