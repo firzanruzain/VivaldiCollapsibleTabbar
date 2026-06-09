@@ -8,14 +8,14 @@
 
   &.tabs-left:has(.auto-hide-wrapper.left.has-tabbar) {
     #main, #footer{
-      padding-left: calc(42px + var(--extraPadding, 0px));
+      padding-left: calc(47px + var(--extraPadding, 0px));
     }
   }
 
   /* add right margin for right vertical tabbar (skip when toolbar-edit-mode active) */
   &.tabs-right:has(.auto-hide-wrapper.right.has-tabbar) {
     #main, #footer {
-      padding-right: calc(42px + var(--extraPadding, 0px));
+      padding-right: calc(47px + var(--extraPadding, 0px));
     }
   }
 
@@ -33,25 +33,28 @@
     height: calc(100% - (0px * 2));
     transform: unset !important;
     z-index: 4;
-    border-radius: 0px 0px 0px 0px !important;
-    box-shadow: unset !important;
+    border-radius: 0px 0px 0px 0px;
+    box-shadow: 0 0 0 0px transparent, 0 0 0px transparent;
+    transition: box-shadow 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
 
     .tabbar-wrapper {
       border-radius: 0px 0px 0px 0px;
-      transition: box-shadow 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
     }
 
-    .tabbar-wrapper:not(:hover) #tabs-tabbar-container:not(:focus-within) {
+    &:not(.show) #tabs-tabbar-container:not(:focus-within) {
       width: 42px !important;
     }
 
-    .tabbar-wrapper:hover {
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.3);
+    &.show {
+      box-shadow: 0 0 0 1px var(--colorFgAlpha), 0 3px 10px var(--colorAccentBgFadedMost);
     }
 
     #tabs-tabbar-container {
       transition: width 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
       border-radius: 0px 0px 0px 0px;
+      padding-top: 6px;
+      padding-left: 2.5px;
+      padding-right: 2.5px;
     }
 
     &:has(#panels-container.expanded) {
@@ -65,11 +68,11 @@
 
     background-color: transparent;
     
-    &.left .tabbar-wrapper, &.left::before {
+    &.left .tabbar-wrapper, &.left::before, &.left {
       border-radius: 0px var(--radiusWindow) var(--radiusWindow) 0px;
     }
 
-    &.right .tabbar-wrapper, &.right::before {
+    &.right .tabbar-wrapper, &.right::before, &.right {
       border-radius: var(--radiusWindow) 0px 0px var(--radiusWindow);
     }
 
@@ -88,23 +91,12 @@
       background-position: var(--browserBackgroundPosition);
       background-repeat: var(--browserBackgroundRepeat);
       background-size: var(--browserBackgroundSize);
+      transition: background-color 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
+      background-blend-mode: multiply;
     }
 
-    div#panels-container::before  {
-      width: 100%;
-      height: 100%;
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      contain: paint;
-      background-attachment: fixed;
-      background-color: var(--browserBackgroundColor);
-      background-image: var(--browserBlurredImage);
-      background-position: var(--browserBackgroundPosition);
-      background-repeat: var(--browserBackgroundRepeat);
-      background-size: var(--browserBackgroundSize);
+    &.show::before{
+      background-color: var(--browserBackgroundColor, var(--colorBgAlphaHeavy));
     }
 
     #panels-container {
@@ -120,7 +112,7 @@
     }
 
     &.transparent-tabbar.color-behind-tabs-off .auto-hide-wrapper.has-tabbar {
-      background: unset !important;
+      background: var(--colorBgAlphaBlur);
     }
   }
 }
