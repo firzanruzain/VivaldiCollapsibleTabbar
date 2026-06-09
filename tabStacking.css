@@ -1,0 +1,38 @@
+#browser.maximized {
+
+    .auto-hide-wrapper.left.has-tabbar, .auto-hide-wrapper.right.has-tabbar {
+
+        &:has(#tabs-subcontainer) {
+
+            #tabs-container, #tabs-subcontainer {
+                transition: max-width var(--animation), min-width var(--animation);
+            }
+    
+            #tabs-container{
+                max-width: 42px;
+                min-width: 42px;
+
+                &:hover, &:has(.ToolbarButton-Button.button-pressed){
+                    max-width: calc(100% - 42px) !important;
+                    min-width: calc(100% - 42px) !important;
+                }
+            }
+
+            #tabs-subcontainer{
+                max-width: 42px;
+                min-width: 42px;
+            }
+
+            &:has(#tabs-container:not(:hover)):not(:has(.ToolbarButton-Button.button-pressed)) {
+                #tabs-subcontainer{
+                    max-width: calc(100% - 42px) !important;
+                    min-width: calc(100% - 42px) !important;
+                }
+            }
+
+            #tabs-container .SlideBar{
+                display: none !important;
+            }
+        }
+    }
+}
