@@ -1,0 +1,26 @@
+/* add margin for maximized browser */
+.auto-hide {
+  #browser.maximized {
+    
+    #webview-container {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      border-radius: var(--radius);
+    }
+
+    &.unified-ui #webview-container {
+      margin-left: 0px;
+    }
+
+    &:not(.unified-ui) #webview-container {
+      margin-left: 10px;
+    }
+
+  }
+
+  /* add border radius for maximized browser */
+  #browser.maximized #webpage-stack {
+    border-radius: var(--radius);
+  }
+}
