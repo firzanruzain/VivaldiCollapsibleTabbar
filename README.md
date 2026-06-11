@@ -10,6 +10,11 @@ Custom Vivaldi CSS to provide a collapsible vertical tab bar, edge padding adjus
 - Optional blurred background for unified UI modes
 
 ## Releases
+- v0.1.2 — Styling and UI polish for tab stacking and webview spacing (2026-06-11)
+	- Added 2-level tab stacking styling support
+	- Adjusted tabbar padding and width handling
+	- Added unified-mode tabbar hover shadow
+	- Added webview margin styling
 - v0.1.1 — Refactor vertical tabbar styles (2026-06-07)
 	- Removed extra spacing between tabbar and webview container
 	- Combined and organized left/right tabbar settings
@@ -20,12 +25,13 @@ Custom Vivaldi CSS to provide a collapsible vertical tab bar, edge padding adjus
 Download the latest builds from the [Releases page](https://github.com/firzanruzain/VivaldiCollapsibleTabbar/releases)
 
 ## Installation
-> Use `main.css` from the release.
+> Use the full CSS set from the release folder, and keep any CSS files you want to apply together in the same folder.
 
-1. Visit the Releases page and download `main.css` for the desired version.
-2. Enable CSS experiments at [vivaldi://experiments/](vivaldi://experiments/) if needed.
-3. In Vivaldi go to Settings → Appearance → Custom UI Modifications and point to the folder containing `main.css`.
-4. Restart Vivaldi and toggle tabbar auto-hide to see the effect.
+1. Visit the Releases page and download the CSS files you want to use for the desired version.
+2. Put all selected `.css` files in the same folder so Vivaldi can load them together.
+3. Enable CSS experiments at [vivaldi://experiments/](vivaldi://experiments/) if needed.
+4. In Vivaldi go to Settings → Appearance → Custom UI Modifications and point to that folder.
+5. Restart Vivaldi and toggle tabbar auto-hide to see the effect.
 
 For community tips and advanced modding, see: https://forum.vivaldi.net/topic/10549/modding-vivaldi
 
