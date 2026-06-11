@@ -2,7 +2,7 @@
 .auto-hide {
   #browser.maximized {
     
-    #webview-container {
+    .inner {
       margin-top: 10px;
       margin-bottom: 10px;
       margin-right: 10px;
@@ -19,8 +19,16 @@
 
   }
 
-  /* add border radius for maximized browser */
-  #browser.maximized #webpage-stack {
+  #browser #panels-container .panel-group {
+    border-color: var(--colorBgAlpha);
+    border-radius: var(--radius);
+  }
+
+  #webpage-stack {
+    border-radius: var(--radius);
+  }
+
+  .inner * {
     border-radius: var(--radius);
   }
 }
