@@ -4,29 +4,37 @@
 
         &:has(#tabs-subcontainer) {
 
+            &.show {
+                --minWidth: calc(42px + var(--scrollbarWidth));
+            }
+
+            &:not(.show){
+                --minWidth: 42px;
+            }
+
             #tabs-container, #tabs-subcontainer {
                 transition: max-width var(--animation), min-width var(--animation);
             }
     
             #tabs-container{
-                max-width: 42px;
-                min-width: 42px;
-
+                max-width: var(--minWidth);
+                min-width: var(--minWidth);
+                
                 &:hover, &:has(.ToolbarButton-Button.button-pressed){
-                    max-width: calc(100% - 42px) !important;
-                    min-width: calc(100% - 42px) !important;
+                    max-width: calc(100% - var(--minWidth)) !important;
+                    min-width: calc(100% - var(--minWidth)) !important;
                 }
             }
 
             #tabs-subcontainer{
-                max-width: 42px;
-                min-width: 42px;
+                max-width: var(--minWidth);
+                min-width: var(--minWidth);
             }
 
             &:has(#tabs-container:not(:hover)):not(:has(.ToolbarButton-Button.button-pressed)) {
                 #tabs-subcontainer{
-                    max-width: calc(100% - 42px) !important;
-                    min-width: calc(100% - 42px) !important;
+                    max-width: calc(100% - var(--minWidth)) !important;
+                    min-width: calc(100% - var(--minWidth)) !important;
                 }
             }
 
