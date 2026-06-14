@@ -78,7 +78,7 @@
       }
     }
 
-    &:not(.show) #tabs-container .tab-strip.overflow {
+    &:not(.show) .tab-strip.overflow {
       margin: 0 max(calc(var(--densityGap) * 2), 1px) !important;
       scrollbar-width: none !important;
       min-width: unset !important;
