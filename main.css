@@ -90,12 +90,12 @@
 
     background-color: transparent;
     
-    &.left .tabbar-wrapper, &.left::before, &.left {
-      border-radius: 0px var(--radiusWindow) var(--radiusWindow) 0px;
+    &.left .tabbar-wrapper, &.left::before, &.left, &.left .panel-group {
+      border-radius: 0px var(--radiusWindow) var(--radiusWindow) 0px !important;
     }
 
-    &.right .tabbar-wrapper, &.right::before, &.right {
-      border-radius: var(--radiusWindow) 0px 0px var(--radiusWindow);
+    &.right .tabbar-wrapper, &.right::before, &.right, &.right .panel-group {
+      border-radius: var(--radiusWindow) 0px 0px var(--radiusWindow) !important;
     }
 
     &::before  {
@@ -121,8 +121,8 @@
     }
 
     #panels-container {
-    padding-bottom: 0px !important;
-  }
+      padding-bottom: 0px !important;
+    }
   }
 }
 
