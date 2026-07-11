@@ -9,18 +9,14 @@ Custom Vivaldi CSS to provide a collapsible vertical tab bar, edge padding adjus
 - Adds safe padding to webview/main content when tabbars are present
 - Optional blurred background for unified UI modes
 
-## Releases
-- v0.1.2 — Styling and UI polish for tab stacking and webview spacing (2026-06-11)
-	- Added 2-level tab stacking styling support
-	- Adjusted tabbar padding and width handling
-	- Added unified-mode tabbar hover shadow
-	- Added webview margin styling
-- v0.1.1 — Refactor vertical tabbar styles (2026-06-07)
-	- Removed extra spacing between tabbar and webview container
-	- Combined and organized left/right tabbar settings
-	- Fixed border-radius and shadow styling
-	- Added improved panel styling and transitions
-	- Adjusted unified UI overlays and padding
+## Release Notes
+See [RELEASE_NOTES.md](RELEASE_NOTES.md) for the full changelog and release note template.
+
+Latest release: v0.1.3
+- Tested with Vivaldi 8.1.4087.48 (Official Build) (64-bit)
+- UI polish for tab stacking and selector updates
+- Hover-based expand behavior for the tabbar
+- Improved 2-level tab stacking and scrollbar handling
 
 Download the latest builds from the [Releases page](https://github.com/firzanruzain/VivaldiCollapsibleTabbar/releases)
 
