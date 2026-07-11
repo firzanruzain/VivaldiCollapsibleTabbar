@@ -4,11 +4,11 @@
 
         &:has(#tabs-subcontainer) {
 
-            &.show {
+            &:hover {
                 --minWidth: calc(42px + var(--scrollbarWidth));
             }
 
-            &:not(.show){
+            &:not(:hover){
                 --minWidth: 42px;
             }
 
