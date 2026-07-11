@@ -1,19 +1,26 @@
 
 /* add left margin for left vertical tabbar (skip when toolbar-edit-mode active) */
-#browser.maximized {
+#browser.maximized.auto-hide {
 
-  --animation: 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.13s;
+  --animation: 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.3s;
   --widthTabbar: 42px;
+  --topSpace: 12px;
 
   .separator{
     --PositionX: -6px !important;
+  }
+
+  .auto-hide-wrapper.left.has-tabbar, .auto-hide-wrapper.right.has-tabbar {
+    pointer-events: auto !important;
+    touch-action: auto !important;
   }
 
   &:has(#tabs-subcontainer) {
     --widthTabbar: 84px;
   }
   
-  &.tabs-left:has(.auto-hide-wrapper.left.has-tabbar #panels-container) {
+  &.tabs-left:has(.auto-hide-wrapper.left.has-tabbar #panels-container),
+  &.tabs-right:has(.auto-hide-wrapper.right.has-tabbar #panels-container){
     --extraPadding: 41px;
   }
 
@@ -67,7 +74,7 @@
     #tabs-tabbar-container {
       transition: width var(--animation);
       border-radius: 0px 0px 0px 0px;
-      padding-top: 6px;
+      padding-top: var(--topSpace);
       padding-left: 2.5px;
       padding-right: 2.5px;
     }
@@ -124,16 +131,12 @@
       padding-bottom: 0px !important;
     }
   }
-}
 
-.auto-hide {
-  #browser.maximized {
-    .auto-hide-wrapper.show {
-      -webkit-app-region: unset !important;
-    }
+  .auto-hide-wrapper.show {
+    -webkit-app-region: unset !important;
+  }
 
-    &.transparent-tabbar.color-behind-tabs-off .auto-hide-wrapper.has-tabbar {
-      background: var(--colorBgAlphaBlur);
-    }
+  &.transparent-tabbar.color-behind-tabs-off .auto-hide-wrapper.has-tabbar {
+    background: var(--colorBgAlphaBlur);
   }
 }

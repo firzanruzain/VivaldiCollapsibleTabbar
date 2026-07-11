@@ -1,25 +1,45 @@
 /* add margin for maximized browser */
-.auto-hide {
-  #browser.maximized {
+#browser.auto-hide:not(.fullscreen) {
+  &.maximized {
     
     .inner {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      margin-right: 10px;
+      margin-top: var(--topSpace);
+      margin-bottom: var(--topSpace);
       border-radius: var(--radius);
     }
 
-    &.unified-ui #webview-container {
-      margin-left: 0px;
+    &.unified-ui {
+
+      &.tabs-left {
+        --leftMargin: 0px;
+        --rightMargin: 10px
+      }
+
+      &.tabs-right {
+        --leftMargin: 10px;
+        --rightMargin: 0px
+      }
+
+      &.tabs-off {
+        --leftMargin: 10px;
+        --rightMargin: 10px;
+      }
+
     }
 
-    &:not(.unified-ui) #webview-container {
-      margin-left: 10px;
+    &:not(.unified-ui)  {
+      --leftMargin: 10px;
+      --rightMargin: 10px;
+    }
+
+    #webview-container {
+      margin-left: var(--leftMargin);
+      margin-right: var(--rightMargin);
     }
 
   }
 
-  #browser #panels-container .panel-group {
+  #panels-container .panel-group {
     border-color: var(--colorBgAlpha);
     border-radius: var(--radius);
   }
@@ -31,4 +51,4 @@
   .inner * {
     border-radius: var(--radius);
   }
-}
+} 
