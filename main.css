@@ -6,10 +6,6 @@
   --widthTabbar: 42px;
   --topSpace: 12px;
 
-  .separator{
-    --PositionX: -6px !important;
-  }
-
   .auto-hide-wrapper.left.has-tabbar, .auto-hide-wrapper.right.has-tabbar {
     pointer-events: auto !important;
     touch-action: auto !important;
