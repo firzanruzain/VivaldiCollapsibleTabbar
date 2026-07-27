@@ -1,0 +1,15 @@
+{
+  "name": "vivaldi-collapsible-tabbar",
+  "version": "0.1.3",
+  "private": true,
+  "description": "Sass sources for Vivaldi collapsible tabbar styles",
+  "scripts": {
+    "build:css": "sass src/scss/main-hover.scss src/main-hover.css --no-source-map --style=expanded && sass src/scss/main-show.scss src/main-show.css --no-source-map --style=expanded && sass src/scss/tabStacking.scss src/tabStacking.css --no-source-map --style=expanded && sass src/scss/webview.scss src/webview.css --no-source-map --style=expanded",
+    "watch:css": "sass --watch src/scss/main-hover.scss:src/main-hover.css src/scss/main-show.scss:src/main-show.css src/scss/tabStacking.scss:src/tabStacking.css src/scss/webview.scss:src/webview.css --style=expanded",
+    "release:prepare": "npm run build:css",
+    "preversion": "npm run release:prepare"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}

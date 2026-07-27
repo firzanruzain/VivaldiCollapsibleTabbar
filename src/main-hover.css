@@ -1,0 +1,121 @@
+#browser.maximized.auto-hide {
+  --animation: 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.3s;
+  --animation-delay: 0.2s cubic-bezier(0.2, 0.9, 0.6, 1) 0.3s;
+  --widthTabbar: 42px;
+  --topSpace: 12px;
+}
+#browser.maximized.auto-hide .button-toolbar.newtab {
+  flex: auto !important;
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.left.has-tabbar,
+#browser.maximized.auto-hide .auto-hide-wrapper.right.has-tabbar {
+  pointer-events: auto !important;
+  touch-action: auto !important;
+}
+#browser.maximized.auto-hide:has(#tabs-subcontainer) {
+  --widthTabbar: 84px;
+}
+#browser.maximized.auto-hide.tabs-left:has(.auto-hide-wrapper.left.has-tabbar #panels-container), #browser.maximized.auto-hide.tabs-right:has(.auto-hide-wrapper.right.has-tabbar #panels-container) {
+  --extraPadding: 41px;
+}
+#browser.maximized.auto-hide.tabs-left:has(.auto-hide-wrapper.left.has-tabbar) #main,
+#browser.maximized.auto-hide.tabs-left:has(.auto-hide-wrapper.left.has-tabbar) #footer {
+  padding-left: calc(var(--widthTabbar) + 5px + var(--extraPadding, 0px));
+}
+#browser.maximized.auto-hide.tabs-right:has(.auto-hide-wrapper.right.has-tabbar) #main,
+#browser.maximized.auto-hide.tabs-right:has(.auto-hide-wrapper.right.has-tabbar) #footer {
+  padding-right: calc(var(--widthTabbar) + 5px + var(--extraPadding, 0px));
+}
+#browser.maximized.auto-hide #main,
+#browser.maximized.auto-hide #footer {
+  transition: padding var(--animation);
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.left.has-tabbar.left,
+#browser.maximized.auto-hide .auto-hide-wrapper.right.has-tabbar.left {
+  left: 0 !important;
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.left.has-tabbar.right,
+#browser.maximized.auto-hide .auto-hide-wrapper.right.has-tabbar.right {
+  right: 0 !important;
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.left.has-tabbar,
+#browser.maximized.auto-hide .auto-hide-wrapper.right.has-tabbar {
+  top: 0px;
+  height: calc(100% - 0px);
+  transform: unset !important;
+  z-index: 4;
+  border-radius: 0px 0px 0px 0px;
+  box-shadow: 0 0 0 0px transparent, 0 0 0px transparent;
+  transition: box-shadow var(--animation);
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.left.has-tabbar .tabbar-wrapper,
+#browser.maximized.auto-hide .auto-hide-wrapper.right.has-tabbar .tabbar-wrapper {
+  border-radius: 0px 0px 0px 0px;
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.left.has-tabbar:not(:hover) #tabs-tabbar-container:not(:focus-within):not(:focus):not(:active):not(:target):not(:hover):not(:has(button.button-pressed)),
+#browser.maximized.auto-hide .auto-hide-wrapper.right.has-tabbar:not(:hover) #tabs-tabbar-container:not(:focus-within):not(:focus):not(:active):not(:target):not(:hover):not(:has(button.button-pressed)) {
+  width: var(--widthTabbar) !important;
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.left.has-tabbar:hover,
+#browser.maximized.auto-hide .auto-hide-wrapper.right.has-tabbar:hover {
+  box-shadow: 0 0 0 1px var(--colorFgAlpha), 0 3px 10px var(--colorAccentBgFadedMost);
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.left.has-tabbar #tabs-tabbar-container,
+#browser.maximized.auto-hide .auto-hide-wrapper.right.has-tabbar #tabs-tabbar-container {
+  transition: width var(--animation);
+  border-radius: 0px 0px 0px 0px;
+  padding-top: var(--topSpace);
+  padding-left: 2.5px;
+  padding-right: 2.5px;
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.left.has-tabbar:has(#panels-container.expanded) .tabbar-wrapper,
+#browser.maximized.auto-hide .auto-hide-wrapper.right.has-tabbar:has(#panels-container.expanded) .tabbar-wrapper {
+  display: none;
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.left.has-tabbar:not(:hover) .tab-strip.overflow,
+#browser.maximized.auto-hide .auto-hide-wrapper.right.has-tabbar:not(:hover) .tab-strip.overflow {
+  margin: 0 max(var(--densityGap) * 2, 1px) !important;
+  scrollbar-width: none !important;
+  min-width: unset !important;
+  transition: scrollbar-width var(--animation);
+}
+#browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar {
+  background-color: transparent;
+}
+#browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar.left .tabbar-wrapper, #browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar.left::before, #browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar.left, #browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar.left .panel-group {
+  border-radius: 0px var(--radiusWindow) var(--radiusWindow) 0px !important;
+}
+#browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar.right .tabbar-wrapper, #browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar.right::before, #browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar.right, #browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar.right .panel-group {
+  border-radius: var(--radiusWindow) 0px 0px var(--radiusWindow) !important;
+}
+#browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar::before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  contain: paint;
+  background-attachment: fixed;
+  background-color: var(--browserBackgroundColor);
+  background-image: var(--browserBlurredImage);
+  background-position: var(--browserBackgroundPosition);
+  background-repeat: var(--browserBackgroundRepeat);
+  background-size: var(--browserBackgroundSize);
+  transition: box-shadow var(--animation);
+}
+#browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar:hover::before {
+  box-shadow: inset 0 0 0 2000px var(--browserBackgroundColor, var(--colorBgAlphaHeavy));
+}
+#browser.maximized.auto-hide.unified-ui .auto-hide-wrapper:is(.left, .right).has-tabbar #panels-container {
+  padding-bottom: 0px !important;
+}
+#browser.maximized.auto-hide .auto-hide-wrapper.show {
+  -webkit-app-region: unset !important;
+}
+#browser.maximized.auto-hide.transparent-tabbar.color-behind-tabs-off .auto-hide-wrapper.has-tabbar {
+  background: var(--colorBgAlphaBlur);
+}
+
+/*# sourceMappingURL=main-hover.css.map */

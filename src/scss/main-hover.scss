@@ -1,0 +1,3 @@
+@use "main-auto-hide" as autoHide;
+
+@include autoHide.auto-hide-tabbar(hover);

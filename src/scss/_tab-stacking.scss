@@ -1,0 +1,80 @@
+@use "tokens" as t;
+
+@mixin tab-stacking {
+  #browser.maximized {
+    .auto-hide-wrapper.left.has-tabbar,
+    .auto-hide-wrapper.right.has-tabbar {
+      &:has(#tabs-subcontainer) {
+        &:hover {
+          --minWidth: calc(#{t.$tabbar-width-default} + var(--scrollbarWidth));
+          --mainMinWidth: #{t.$tabbar-width-default};
+          --subMinWidth: #{t.$tabbar-width-default};
+
+          &:has(#tabs-container .tab-strip.overflow) {
+            --mainMinWidth: calc(#{t.$tabbar-width-default} + var(--scrollbarWidth));
+          }
+
+          &:has(#tabs-subcontainer .tab-strip.overflow) {
+            --subMinWidth: calc(#{t.$tabbar-width-default} + var(--scrollbarWidth));
+          }
+        }
+
+        &:not(:hover) {
+          --minWidth: #{t.$tabbar-width-default};
+        }
+
+        #tabs-container,
+        #tabs-subcontainer {
+          transition: max-width var(--animation-delay), min-width var(--animation-delay);
+        }
+
+        #tabs-container {
+          max-width: var(--mainMinWidth);
+          min-width: var(--mainMinWidth);
+        }
+
+        &:has(#tabs-container:hover),
+        &:has(#tabs-container .ToolbarButton-Button.button-pressed) {
+          --subMinWidth: #{t.$tabbar-width-default} !important;
+
+          #tabs-container {
+            max-width: calc(100% - var(--subMinWidth)) !important;
+            min-width: calc(100% - var(--subMinWidth)) !important;
+          }
+
+          #tabs-subcontainer .tab-strip.overflow {
+            margin: 0 max(calc(var(--densityGap) * 2), 1px) !important;
+            scrollbar-width: none !important;
+            min-width: unset !important;
+            transition: scrollbar-width var(--animation-delay);
+          }
+        }
+
+        #tabs-subcontainer {
+          max-width: var(--subMinWidth);
+          min-width: var(--subMinWidth);
+        }
+
+        &:has(#tabs-container:not(:hover)):not(:has(.ToolbarButton-Button.button-pressed)) {
+          --mainMinWidth: #{t.$tabbar-width-default} !important;
+
+          #tabs-subcontainer {
+            max-width: calc(100% - var(--mainMinWidth)) !important;
+            min-width: calc(100% - var(--mainMinWidth)) !important;
+          }
+
+          #tabs-container .tab-strip.overflow {
+            margin: 0 max(calc(var(--densityGap) * 2), 1px) !important;
+            scrollbar-width: none !important;
+            min-width: unset !important;
+            transition: scrollbar-width var(--animation-delay);
+          }
+        }
+
+        #tabs-container .SlideBar {
+          display: none !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):hover,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):hover {
+  --minWidth: calc(42px + var(--scrollbarWidth));
+  --mainMinWidth: 42px;
+  --subMinWidth: 42px;
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):hover:has(#tabs-container .tab-strip.overflow),
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):hover:has(#tabs-container .tab-strip.overflow) {
+  --mainMinWidth: calc(42px + var(--scrollbarWidth));
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):hover:has(#tabs-subcontainer .tab-strip.overflow),
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):hover:has(#tabs-subcontainer .tab-strip.overflow) {
+  --subMinWidth: calc(42px + var(--scrollbarWidth));
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):not(:hover),
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):not(:hover) {
+  --minWidth: 42px;
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer) #tabs-container,
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer) #tabs-subcontainer,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer) #tabs-container,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer) #tabs-subcontainer {
+  transition: max-width var(--animation-delay), min-width var(--animation-delay);
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer) #tabs-container,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer) #tabs-container {
+  max-width: var(--mainMinWidth);
+  min-width: var(--mainMinWidth);
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:hover), #browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):has(#tabs-container .ToolbarButton-Button.button-pressed),
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:hover),
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):has(#tabs-container .ToolbarButton-Button.button-pressed) {
+  --subMinWidth: 42px !important;
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:hover) #tabs-container, #browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):has(#tabs-container .ToolbarButton-Button.button-pressed) #tabs-container,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:hover) #tabs-container,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):has(#tabs-container .ToolbarButton-Button.button-pressed) #tabs-container {
+  max-width: calc(100% - var(--subMinWidth)) !important;
+  min-width: calc(100% - var(--subMinWidth)) !important;
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:hover) #tabs-subcontainer .tab-strip.overflow, #browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):has(#tabs-container .ToolbarButton-Button.button-pressed) #tabs-subcontainer .tab-strip.overflow,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:hover) #tabs-subcontainer .tab-strip.overflow,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):has(#tabs-container .ToolbarButton-Button.button-pressed) #tabs-subcontainer .tab-strip.overflow {
+  margin: 0 max(var(--densityGap) * 2, 1px) !important;
+  scrollbar-width: none !important;
+  min-width: unset !important;
+  transition: scrollbar-width var(--animation-delay);
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer) #tabs-subcontainer,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer) #tabs-subcontainer {
+  max-width: var(--subMinWidth);
+  min-width: var(--subMinWidth);
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:not(:hover)):not(:has(.ToolbarButton-Button.button-pressed)),
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:not(:hover)):not(:has(.ToolbarButton-Button.button-pressed)) {
+  --mainMinWidth: 42px !important;
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:not(:hover)):not(:has(.ToolbarButton-Button.button-pressed)) #tabs-subcontainer,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:not(:hover)):not(:has(.ToolbarButton-Button.button-pressed)) #tabs-subcontainer {
+  max-width: calc(100% - var(--mainMinWidth)) !important;
+  min-width: calc(100% - var(--mainMinWidth)) !important;
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:not(:hover)):not(:has(.ToolbarButton-Button.button-pressed)) #tabs-container .tab-strip.overflow,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer):has(#tabs-container:not(:hover)):not(:has(.ToolbarButton-Button.button-pressed)) #tabs-container .tab-strip.overflow {
+  margin: 0 max(var(--densityGap) * 2, 1px) !important;
+  scrollbar-width: none !important;
+  min-width: unset !important;
+  transition: scrollbar-width var(--animation-delay);
+}
+#browser.maximized .auto-hide-wrapper.left.has-tabbar:has(#tabs-subcontainer) #tabs-container .SlideBar,
+#browser.maximized .auto-hide-wrapper.right.has-tabbar:has(#tabs-subcontainer) #tabs-container .SlideBar {
+  display: none !important;
+}
+
+/*# sourceMappingURL=tabStacking.css.map */

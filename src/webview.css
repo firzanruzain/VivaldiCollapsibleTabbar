@@ -1,0 +1,37 @@
+#browser.auto-hide:not(.fullscreen).maximized .inner {
+  margin-top: var(--topSpace);
+  margin-bottom: var(--topSpace);
+  border-radius: var(--radius);
+}
+#browser.auto-hide:not(.fullscreen).maximized.unified-ui.tabs-left {
+  --leftMargin: 0px;
+  --rightMargin: 10px;
+}
+#browser.auto-hide:not(.fullscreen).maximized.unified-ui.tabs-right {
+  --leftMargin: 10px;
+  --rightMargin: 0px;
+}
+#browser.auto-hide:not(.fullscreen).maximized.unified-ui.tabs-off {
+  --leftMargin: 10px;
+  --rightMargin: 10px;
+}
+#browser.auto-hide:not(.fullscreen).maximized:not(.unified-ui) {
+  --leftMargin: 10px;
+  --rightMargin: 10px;
+}
+#browser.auto-hide:not(.fullscreen).maximized #webview-container {
+  margin-left: var(--leftMargin);
+  margin-right: var(--rightMargin);
+}
+#browser.auto-hide:not(.fullscreen) #panels-container .panel-group {
+  border-color: var(--colorBgAlpha);
+  border-radius: var(--radius);
+}
+#browser.auto-hide:not(.fullscreen) #webpage-stack {
+  border-radius: var(--radius);
+}
+#browser.auto-hide:not(.fullscreen) .inner * {
+  border-radius: var(--radius);
+}
+
+/*# sourceMappingURL=webview.css.map */

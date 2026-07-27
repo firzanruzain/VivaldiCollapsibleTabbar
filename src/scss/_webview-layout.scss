@@ -1,0 +1,53 @@
+@use "tokens" as t;
+
+@mixin webview-layout {
+  #browser.auto-hide:not(.fullscreen) {
+    &.maximized {
+      .inner {
+        margin-top: var(--topSpace);
+        margin-bottom: var(--topSpace);
+        border-radius: var(--radius);
+      }
+
+      &.unified-ui {
+        &.tabs-left {
+          --leftMargin: 0px;
+          --rightMargin: #{t.$edge-spacing};
+        }
+
+        &.tabs-right {
+          --leftMargin: #{t.$edge-spacing};
+          --rightMargin: 0px;
+        }
+
+        &.tabs-off {
+          --leftMargin: #{t.$edge-spacing};
+          --rightMargin: #{t.$edge-spacing};
+        }
+      }
+
+      &:not(.unified-ui) {
+        --leftMargin: #{t.$edge-spacing};
+        --rightMargin: #{t.$edge-spacing};
+      }
+
+      #webview-container {
+        margin-left: var(--leftMargin);
+        margin-right: var(--rightMargin);
+      }
+    }
+
+    #panels-container .panel-group {
+      border-color: var(--colorBgAlpha);
+      border-radius: var(--radius);
+    }
+
+    #webpage-stack {
+      border-radius: var(--radius);
+    }
+
+    .inner * {
+      border-radius: var(--radius);
+    }
+  }
+}
