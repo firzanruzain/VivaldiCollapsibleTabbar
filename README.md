@@ -12,22 +12,23 @@ Custom Vivaldi CSS to provide a collapsible vertical tab bar, edge padding adjus
 ## Release Notes
 See [RELEASE_NOTES.md](RELEASE_NOTES.md) for the full changelog and release note template.
 
-Latest release: v0.1.3
-- Tested with Vivaldi 8.1.4087.48 (Official Build) (64-bit)
-- UI polish for tab stacking and selector updates
-- Hover-based expand behavior for the tabbar
-- Improved 2-level tab stacking and scrollbar handling
+Latest release: v0.1.4
+- Tested with Vivaldi 8.1.4087.58 (Official Build) (64-bit)
+- Sass refactor with shared styles and automated CSS builds
+- Separate main CSS variants for hover-driven and show-class-driven expansion
+- Improved release workflow and tabbar animation handling
 
 Download the latest builds from the [Releases page](https://github.com/firzanruzain/VivaldiCollapsibleTabbar/releases)
 
 ## Installation
-> Use the full CSS set from the release folder, and keep any CSS files you want to apply together in the same folder.
+> Choose one main tabbar CSS variant and keep the related CSS files together in the same folder.
 
 1. Visit the Releases page and download the CSS files you want to use for the desired version.
-2. Put all selected `.css` files in the same folder so Vivaldi can load them together.
-3. Enable CSS experiments at [vivaldi://experiments/](vivaldi://experiments/) if needed.
-4. In Vivaldi go to Settings → Appearance → Custom UI Modifications and point to that folder.
-5. Restart Vivaldi and toggle tabbar auto-hide to see the effect.
+2. Choose either `main-hover.css` or `main-show.css` as your main tabbar style, not both.
+3. Put the chosen main CSS file together with `tabStacking.css` and `webview.css` in the same folder so Vivaldi can load them together.
+4. Enable CSS experiments at [vivaldi://experiments/](vivaldi://experiments/) if needed.
+5. In Vivaldi go to Settings → Appearance → Custom UI Modifications and point to that folder.
+6. Restart Vivaldi and toggle tabbar auto-hide to see the effect.
 
 For community tips and advanced modding, see: https://forum.vivaldi.net/topic/10549/modding-vivaldi
 

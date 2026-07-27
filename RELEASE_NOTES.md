@@ -16,6 +16,20 @@ Use this structure for each new release:
   - compatibility or selector updates
 ```
 
+## v0.1.4
+- Vivaldi version tested: 8.1.4087.58 (Official Build) (64-bit)
+- Date: 2026-07-27
+- Summary: Sass refactor for the tabbar styles with automated CSS builds
+- New changes:
+  - Converted the CSS sources to modular Sass entrypoints and shared partials.
+  - Split the main tabbar style into two variants: one using the `show` class and one using hover.
+  - The `show` version expands the tabbar when Vivaldi adds the auto-hide show state.
+  - The hover version expands the tabbar only while the tabbar area is being hovered.
+  - Reduced duplication across the tabbar, tab stacking, and webview styles.
+  - Added build and watch scripts to generate the compiled CSS outputs.
+  - Added a release prep step so CSS is rebuilt automatically before version bumps.
+  - Fixed the missing hover animation delay in the collapsible tabbar output.
+
 ## v0.1.3
 - Vivaldi version tested: 8.1.4087.48 (Official Build) (64-bit)
 - Date: 2026-07-12
