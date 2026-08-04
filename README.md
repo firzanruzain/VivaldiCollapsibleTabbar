@@ -8,6 +8,7 @@ Custom Vivaldi CSS to provide a collapsible vertical tab bar, edge padding adjus
 - Collapsible left and right vertical tabbar support
 - Adds safe padding to webview/main content when tabbars are present
 - Optional blurred background for unified UI modes
+- Enabled only when Vivaldi tabbar auto-hide is turned on
 
 ## Release Notes
 See [RELEASE_NOTES.md](RELEASE_NOTES.md) for the full changelog and release note template.
@@ -22,6 +23,7 @@ Download the latest builds from the [Releases page](https://github.com/firzanruz
 
 ## Installation
 > Choose one main tabbar CSS variant and keep the related CSS files together in the same folder.
+> This mod only takes effect when tabbar auto-hide is enabled in Vivaldi.
 
 1. Visit the Releases page and download the CSS files you want to use for the desired version.
 2. Choose either `main-hover.css` or `main-show.css` as your main tabbar style, not both.
@@ -31,6 +33,14 @@ Download the latest builds from the [Releases page](https://github.com/firzanruz
 6. Restart Vivaldi and toggle tabbar auto-hide to see the effect.
 
 For community tips and advanced modding, see: https://forum.vivaldi.net/topic/10549/modding-vivaldi
+
+## Troubleshooting
+- If the tabbar does not change, confirm that you are only using one main file: either `main-hover.css` or `main-show.css`.
+- Make sure `tabStacking.css` and `webview.css` are in the same folder as the main CSS file.
+- If the padding or animation looks wrong, check whether the issue happens in maximized mode, unified UI, or only when the tabbar is left/right and auto-hidden.
+- If hover expansion or show-class expansion does not work, verify that your setup matches the selected main variant.
+- If Vivaldi ignores the CSS entirely, recheck the Custom UI Modifications folder path and restart the browser after any file changes.
+- When reporting a bug, include your Vivaldi version, OS, tabbar position, main CSS variant, and whether the issue appears in a clean profile.
 
 ## Contributing
 - Open an issue or submit a PR with specific tweaks or compatibility fixes. Please include your Vivaldi version and a short description of the DOM/state that needed adjustment.
