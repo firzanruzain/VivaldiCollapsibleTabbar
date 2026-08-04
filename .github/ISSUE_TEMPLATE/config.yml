@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Vivaldi community forum
+    url: https://forum.vivaldi.net/topic/10549/modding-vivaldi
+    about: Ask general modding questions or compare notes with other Vivaldi CSS users.
+  - name: Releases
+    url: https://github.com/firzanruzain/VivaldiCollapsibleTabbar/releases
+    about: Check the latest release builds and changelog before reporting an issue.
