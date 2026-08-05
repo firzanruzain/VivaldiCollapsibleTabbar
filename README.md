@@ -60,4 +60,4 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 Copyright (c) 2026 mfr.fs
 
 ---
-Small, focused CSS tweaks to make vertical tabbars behave nicely in Vivaldi. Report issues or requests in the repo.
+Small, focused CSS tweaks to make vertical tabbars behave nicely in Vivaldi. Report [issues](https://github.com/firzanruzain/VivaldiCollapsibleTabbar/issues) in the repo.
