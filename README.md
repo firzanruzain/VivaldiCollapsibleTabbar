@@ -32,6 +32,15 @@ Download the latest builds from the [Releases page](https://github.com/firzanruz
 5. In Vivaldi go to Settings → Appearance → Custom UI Modifications and point to that folder.
 6. Restart Vivaldi and toggle tabbar auto-hide to see the effect.
 
+### Which main variant should I use?
+- `main-show.css`: the tabbar expands when Vivaldi applies its own show class, which happens when the mouse reaches the edge of the app window.
+- `main-hover.css`: the tabbar expands immediately when the mouse hovers over the tabbar area.
+- Use only one of these main files at a time, along with `tabStacking.css` and `webview.css`.
+
+### Known limitations
+- `main-hover.css`: if you right-click the tabbar and the context menu appears, the tabbar will collapse.
+- `main-show.css`: if the address bar is in auto-hide mode, the tabbar will collapse when the address bar is visible.
+
 For community tips and advanced modding, see: https://forum.vivaldi.net/topic/10549/modding-vivaldi
 
 ## Troubleshooting
