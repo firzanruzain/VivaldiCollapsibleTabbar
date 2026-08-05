@@ -10,6 +10,15 @@ Custom Vivaldi CSS to provide a collapsible vertical tab bar, edge padding adjus
 - Optional blurred background for unified UI modes
 - Enabled only when Vivaldi tabbar auto-hide is turned on
 
+> ![show version](assets/show-version.gif)
+> show version
+
+> ![hover version](assets/hover-version.gif)
+> hover version
+
+> ![tab stack](assets/tab-stack.gif)
+> two level tab-stacking
+
 ## Release Notes
 See [RELEASE_NOTES.md](RELEASE_NOTES.md) for the full changelog and release note template.
 
