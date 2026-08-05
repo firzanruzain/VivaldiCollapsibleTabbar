@@ -19,6 +19,9 @@ Custom Vivaldi CSS to provide a collapsible vertical tab bar, edge padding adjus
 > ![tab stack](assets/tab-stack.gif)
 > two level tab-stacking
 
+> ![theming](assets/theming.gif)
+> adapt to theme
+
 ## Release Notes
 See [RELEASE_NOTES.md](RELEASE_NOTES.md) for the full changelog and release note template.
 
