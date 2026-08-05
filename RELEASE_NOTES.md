@@ -10,6 +10,7 @@ Use this structure for each new release:
 - Vivaldi version tested: X.Y
 - Date: YYYY-MM-DD
 - Summary: short release summary
+- Installation notes: See the [Installation](README.md#installation) section in the README for the required CSS files and auto-hide setup.
 - New changes:
   - change one
   - change two
@@ -20,6 +21,7 @@ Use this structure for each new release:
 - Vivaldi version tested: 8.1.4087.58 (Official Build) (64-bit)
 - Date: 2026-07-27
 - Summary: Sass refactor for the tabbar styles with automated CSS builds
+- Installation notes: See the [Installation](README.md#installation) section in the README for the required CSS files and auto-hide setup.
 - New changes:
   - Converted the CSS sources to modular Sass entrypoints and shared partials.
   - Split the main tabbar style into two variants: one using the `show` class and one using hover.
