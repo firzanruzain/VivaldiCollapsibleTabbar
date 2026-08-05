@@ -25,7 +25,7 @@ Custom Vivaldi CSS to provide a collapsible vertical tab bar, edge padding adjus
 ## Release Notes
 See [RELEASE_NOTES.md](RELEASE_NOTES.md) for the full changelog and release note template.
 
-Latest release: v0.1.4
+Latest release: [v0.1.4](https://github.com/firzanruzain/VivaldiCollapsibleTabbar/releases/tag/0.1.4)
 - Tested with Vivaldi 8.1.4087.58 (Official Build) (64-bit)
 - Sass refactor with shared styles and automated CSS builds
 - Separate main CSS variants for hover-driven and show-class-driven expansion
